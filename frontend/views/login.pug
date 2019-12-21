@@ -1,0 +1,24 @@
+extends boilerplate
+
+block extrahead
+    link(rel='stylesheet', href='/css/login.css')
+    script(src='/js/login.js')
+
+
+block content
+    .container
+        .row.justify-content-center
+            .col-center
+                h1.center.display-4.mb-5 HUCOIN Gas Payment
+                .input-group.mb-3.center.justify-content-center
+                        .input-group-text#basic-addon1
+                                input.form-control#email(type="text" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1")
+                .input-group.mb-3.center.justify-content-center
+                        .input-group-text#basic-addon2
+                            .text-center
+                                input.form-control#password(type="password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1")
+        .row.justify-content-center.mb-2
+            .col-center.mr-2
+                button.btn.btn-primary#loginButton Log in
+            .col-center
+                button.btn.btn-secondary#signupButton Sign up

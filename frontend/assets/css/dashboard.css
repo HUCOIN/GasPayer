@@ -1,0 +1,17 @@
+#content {
+    margin: 2rem;
+}
+
+#primaryHeader{
+    margin: 3rem;
+    font-size: 5rem;
+}
+
+.ui.segment {
+    display: flex;
+    justify-content: center;
+}
+
+#linePlot {
+    margin-top: 3rem;
+}

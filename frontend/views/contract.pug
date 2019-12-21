@@ -1,0 +1,30 @@
+extends menuBoilerPlate
+block extrahead
+    script(src='/js/contract.js')
+block content
+    .container
+        .row
+            .col-10
+                h3 Contracts
+            .col-2
+                button.btn.btn-success.ml-4#addContractButton Add Contract
+        .row
+            ul.list-group.list-group-horizontal
+                each contract in contracts
+                    li.list-group-item 
+                        .card(style='width: 18rem;')
+                            .card-body
+                                h5.card-title #{contract.name}
+                                h6.card-subtitle.mb-3.text-muted #{contract.address}
+                                h6.card-subtitle.mb-2 #{contract.functionName}
+                                if contract.isFunctionPayable
+                                span.badge.badge-info.mr-5.mb-3 Payable
+                                h6.card-subtitle.mb-2  Payment Amount : #{contract.paymentAmount} HUC
+                                p.card-text
+                                    |Parameters : #{JSON.stringify(contract.parameters)}   
+                                if contract.isPaid
+                                    span.badge.badge-success.mr-5.mb-3 Paid
+                                else
+                                    span.badge.badge-danger.mr-5.mb-3 Not Paid
+                                    button.btn.btn-success.mb-3.mr-2 Pay
+                                button.card-btn.btn.btn-danger.mb-3 Cancel

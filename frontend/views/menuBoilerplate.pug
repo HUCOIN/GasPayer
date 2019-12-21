@@ -1,0 +1,14 @@
+extends boilerPlate
+block menu
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href="#") GasPayer
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+            span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarNavAltMarkup
+            .navbar-nav
+                a.nav-item.nav-link.active( href="/dashboard") Dashboard
+                a.nav-item.nav-link(href="/contract") Contracts
+                a.nav-item.nav-link(href="/account/addBalance") Add Balance
+                a.nav-item.nav-link(href="/account") Account
+            span.navbar-text $ #{balance}
+block content

@@ -1,0 +1,33 @@
+extends boilerplate
+
+block extrahead
+    link(rel='stylesheet', href='/css/signup.css')
+    script(src='/js/signup.js')
+
+
+block content
+    .container
+        .row.justify-content-center
+            .col-center
+                h1.center.display-4.mb-5 HUCOIN Gas Payment
+                .input-group.mb-3.center.justify-content-center
+                        .input-group-text#basic-addon1
+                                input.form-control#email(type="text" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1")
+                .input-group.mb-3.center.justify-content-center
+                        .input-group-text#basic-addon2
+                            .text-center
+                                input.form-control#password(type="password" placeholder="Password" aria-label="password" aria-describedby="basic-addon1")
+                .input-group.mb-3.center.justify-content-center
+                        .input-group-text#basic-addon2
+                            .text-center
+                                input.form-control#password2(type="password" placeholder="Confirm Password" aria-label="ConfirmPassword" aria-describedby="basic-addon1")
+        .row.justify-content-center.mb-2
+            .col-center.mr
+                button.btn.btn-success#signupButton Sign up
+        .row.justify-content-center.mb-2
+            .col-center
+                button.btn.btn-secondary#loginButton Already have an account ? Login
+        .row.justify-content-center.mb-2
+            .col-center
+               .alert.alert-danger#errorBox(role="danger")
+                p#errorMessage

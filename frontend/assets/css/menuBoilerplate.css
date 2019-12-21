@@ -1,0 +1,8 @@
+.ui.visible.left.sidebar~.fixed, .ui.visible.left.sidebar~.pusher {
+    margin-left: 125px;
+    transform: translate3d(0,0,0);
+}
+
+.ui.inverted.icon.menu .item {
+    font-size: 1.25rem;
+}
