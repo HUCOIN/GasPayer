@@ -10,7 +10,8 @@ export const contractSchema = new Schema({
   userWallet: String,
   userMail: String,
   isPaid: { type: Boolean, default: false },
-  isFunctionPayable: Boolean
+  isFunctionPayable: Boolean,
+  returnValue:String
 });
 
 export const userSchema = new Schema({

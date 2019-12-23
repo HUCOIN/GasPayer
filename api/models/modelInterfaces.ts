@@ -20,6 +20,7 @@ interface contractInterface {
   userWallet: string;
   userMail: string;
   isFunctionPayable: boolean;
+  returnValue: string;
 }
 
 export { userInterface };
