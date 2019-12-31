@@ -10,6 +10,7 @@ let mongoose = require("mongoose");
 import { router } from "./api/routes";
 import bodyParser from "body-parser";
 import path from "path";
+import * as signer from "./api/utils/signer";
 console.log(process.env.PROJECT_ENV);
 // Load dot env files according to PROJECT_ENV variable(env variable)
 dotenv.load({ path: ".env.dev" });
@@ -112,7 +113,7 @@ app.set("view engine", "pug");
 
 // On unhandled Promise notify Bilge about this promise and error
 
-
+signer.signTry();
 
 exports.db = db;
 exports.app = app;
