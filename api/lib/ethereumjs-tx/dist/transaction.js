@@ -112,7 +112,12 @@ var Transaction = /** @class */ (function () {
           {
             name: "payer",
             allowZero: true,
-            length: 20,
+            length: 64,
+            default: new buffer_1.Buffer([])
+          },
+          {
+            name: "payerSig",
+            allowZero: true,
             default: new buffer_1.Buffer([])
           },
           {
@@ -244,6 +249,22 @@ var Transaction = /** @class */ (function () {
             sig.v += this.getChainId() * 2 + 8;
         }
         Object.assign(this, sig);
+    };
+    
+    Transaction.prototype.payerSign = function(privateKey, publicKey) {
+      this.v = new buffer_1.Buffer([]);
+      this.s = new buffer_1.Buffer([]);
+      this.r = new buffer_1.Buffer([]);
+      var msgHash = this.hash(false);
+      var sig = ethereumjs_util_1.ecsign(msgHash, privateKey);
+      if (this._implementsEIP155()) {
+        sig.v += this.getChainId() * 2 + 8;
+      }
+      let sigVBuff = Buffer.alloc(2);
+      sigVBuff.writeInt8(sig.v);
+      var buffList = [sigVBuff, sig.s, sig.r];
+      this.payerSig=Buffer.concat(buffList);
+      this.payer=publicKey;
     };
     /**
      * The amount of gas paid for the data in this tx

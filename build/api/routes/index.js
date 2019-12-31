@@ -15,3 +15,4 @@ router.get("/server-stat", (req, res) => res.sendStatus(200));
 router.use("/", main_1.mainRoutes);
 router.use("/account", account_1.accountRoutes);
 router.use("/contract", sessionController, contract_1.contractRoutes);
+//# sourceMappingURL=index.js.map

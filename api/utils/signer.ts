@@ -41,9 +41,10 @@ let rawTx = {
 };
 
 let transaction = new tx.Transaction(rawTx);
-transaction.sign(privateKeyBuff);
-console.log(transaction.toJSON());
-
+console.log(transaction.payerSign);
+transaction.payerSign(privateKeyBuff,publicKeyBuffer);
+transaction.sign(senderPrvKeyBuff);
+console.log(transaction);
 //0x53ae893e4b22d707943299a8d0c844df0e3d5557
 };
 signTry();

@@ -20,3 +20,4 @@ router
     .route("/dashboard")
     // GET /
     .get(sessionController, mainController.dashboard);
+//# sourceMappingURL=main.js.map

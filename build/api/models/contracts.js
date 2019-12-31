@@ -7,3 +7,4 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const schemas_1 = require("./schemas");
 let Contract = mongoose_1.default.model("Contract", schemas_1.contractSchema);
 exports.Contract = Contract;
+//# sourceMappingURL=contracts.js.map

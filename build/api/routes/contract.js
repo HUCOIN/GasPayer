@@ -19,3 +19,12 @@ router
     .route("/add")
     // POST /
     .post(contractController.addContract);
+router
+    .route("/")
+    // POST /
+    .get(contractController.getContracts);
+router
+    .route("/add")
+    // POST /
+    .get(contractController.newContract);
+//# sourceMappingURL=contract.js.map

@@ -5,7 +5,7 @@
   "main": "app.ts",
   "scripts": {
     "start": "nodemon ./build/app.js -e js,json,html,pug",
-    "tsc": "tsc",
+    "tsc": "tsc && cp -r ./api/lib ./build/api/",
     "dev": "ts-node-dev --respawn --transpileOnly ./app.ts"
   },
   "author": "",

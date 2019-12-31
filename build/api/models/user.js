@@ -39,3 +39,4 @@ schemas_1.userSchema.methods.comparePassword = (password, hash) => {
 };
 let User = mongoose_1.default.model("User", schemas_1.userSchema);
 exports.User = User;
+//# sourceMappingURL=user.js.map
