@@ -8,3 +8,4 @@ exports.dashboard = (req, res, next) => {
     console.log("I am rendering");
     return res.render("dashboard", { balance: user.balance });
 };
+//# sourceMappingURL=main.js.map

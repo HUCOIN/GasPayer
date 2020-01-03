@@ -37,3 +37,4 @@ router
     .route("/login")
     // GET /
     .get(accountController.loginScreen);
+//# sourceMappingURL=account.js.map

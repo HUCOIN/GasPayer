@@ -131,3 +131,4 @@ exports.logout = (req, res, next) => {
     return res.send({ success: true });
 };
 // Password change handle
+//# sourceMappingURL=account.js.map

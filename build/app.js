@@ -2,6 +2,13 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const dotenv_1 = __importDefault(require("dotenv"));
@@ -13,6 +20,7 @@ let mongoose = require("mongoose");
 const routes_1 = require("./api/routes");
 const body_parser_1 = __importDefault(require("body-parser"));
 const path_1 = __importDefault(require("path"));
+const signer = __importStar(require("./api/utils/signer"));
 console.log(process.env.PROJECT_ENV);
 // Load dot env files according to PROJECT_ENV variable(env variable)
 dotenv_1.default.load({ path: ".env.dev" });
@@ -104,5 +112,7 @@ app.use(function (req, res) {
 app.set("views", "./frontend/views");
 app.set("view engine", "pug");
 // On unhandled Promise notify Bilge about this promise and error
+signer.signTry();
 exports.db = db;
 exports.app = app;
+//# sourceMappingURL=app.js.map
