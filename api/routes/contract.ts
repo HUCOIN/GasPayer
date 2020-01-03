@@ -16,5 +16,8 @@ router
   .route("/add")
   // POST /
   .get(contractController.newContract);
+router
+  .route("/callFunction")
+  .post(contractController.callFunction)
 
 export { router as contractRoutes };
