@@ -72,6 +72,7 @@ export default class Transaction {
                   * returns the sender's address
                   */
                  getSenderAddress(): Buffer;
+                 getFrom(): Buffer;
                  /**
                   * returns the public key of the sender
                   */

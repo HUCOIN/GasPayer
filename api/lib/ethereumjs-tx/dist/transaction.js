@@ -161,6 +161,10 @@ var Transaction = /** @class */ (function () {
     Transaction.prototype.toCreationAddress = function () {
         return this.to.toString('hex') === '';
     };
+    Transaction.prototype.getFrom = function() {
+        console.log("zaa");
+      return this.from;
+    };
     /**
      * Computes a sha3-256 hash of the serialized tx
      * @param includeSignature - Whether or not to include the signature
@@ -191,7 +195,8 @@ var Transaction = /** @class */ (function () {
      * returns chain ID
      */
     Transaction.prototype.getChainId = function () {
-        return this._common.chainId();
+        return 18;
+       // return this._common.chainId();
     };
     /**
      * returns the sender's address
@@ -247,6 +252,7 @@ var Transaction = /** @class */ (function () {
         var sig = ethereumjs_util_1.ecsign(msgHash, privateKey);
         if (this._implementsEIP155()) {
             sig.v += this.getChainId() * 2 + 8;
+            // sig.v += 18 * 2 + 8;
         }
         Object.assign(this, sig);
     };
