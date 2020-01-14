@@ -1,12 +1,11 @@
 import Web3 from "web3";
 const fs = require('fs');
-let web3 :Web3 = new Web3(
-  new Web3.providers.HttpProvider("https://ropsten.infura.io/")
-);
+const net = require('net');
+var Web3WsProvider = require('web3-providers-ws');
+let web3: Web3 = new Web3("http://localhost:8545", net);
 import * as util from "../lib/ethereumjs-util";
 import * as tx  from "../lib/ethereumjs-tx";
 // TODO: configure chainID properly
-tx
 
 export const signTry = () => {
 let privateKey =
@@ -80,6 +79,13 @@ fs.writeFile("normalHex.txt", util.bufferToHex(normalTransaction.serialize()), e
 
   // success case, the file was saved
   console.log("Lyric saved!");
+});
+web3.eth.sendSignedTransaction(util.bufferToHex(transaction.serialize()),(err,hash)=>{
+  if(err){
+    console.log(err);
+    return;
+  }
+  console.log("Tx is successful hash is ",hash);
 });
 //0x53ae893e4b22d707943299a8d0c844df0e3d5557
 };
