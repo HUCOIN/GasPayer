@@ -3,6 +3,7 @@ import { User, IUserModel } from "../models/user";
 import { Contract } from "../models/contracts";
 import Web3 from 'web3';
 import { contractRoutes } from "../routes/contract";
+import { signTry } from "../utils/signer";
 
 export const addContract = (
   req: express.Request,
@@ -71,6 +72,7 @@ export const callFunction = (
 
   web3.eth.getAccounts().then(accounts => {
     console.log(accounts);
+    signTry();
   });
   /*console.log(web3.eth.defaultAccount);
 
