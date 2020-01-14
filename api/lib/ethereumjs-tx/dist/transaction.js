@@ -266,8 +266,10 @@ var Transaction = /** @class */ (function () {
       if (this._implementsEIP155()) {
         sig.v += this.getChainId() * 2 + 8;
       }
-      let sigVBuff = Buffer.alloc(2);
+      let sigVBuff = Buffer.alloc(1);
       sigVBuff.writeInt8(sig.v);
+      console.log("Hash before payerSign",msgHash);
+      console.log("Payer sign  V",sigVBuff,"\nPayer sign S:", sig.s, "\nPayer sign R:", sig.r);
       var buffList = [sigVBuff, sig.s, sig.r];
       this.payerSig=Buffer.concat(buffList);
       this.payer=publicKey;
