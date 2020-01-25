@@ -19,6 +19,7 @@ block content
                                 select(name='dropDown', id='funcDropdown'+index)
                                     each func in contract.functions
                                         option(value=func.body) #{func.body}
+                                input.form-control(id="parameter"+index,type="text" placeholder="Parameter" aria-describedby="basic-addon1")
                                 button.card-btn.btn.btn-danger.mb-3(onclick='deleteButton("'+contract.name+'")') Delete
                                 button.btn.btn-success.mb-3.mr-2(onclick='payButton("'+contract.address+'","'+index+'")') Pay
                                 

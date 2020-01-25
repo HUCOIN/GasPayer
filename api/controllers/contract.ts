@@ -107,11 +107,11 @@ export const callFunction = (
   var util = require('ethereumjs-util');
   var tx = require('ethereumjs-tx');
 
-
-  web3.eth.getAccounts().then(accounts => {
+  console.log( req.body.funcName, req.body.parameter);
+ /* web3.eth.getAccounts().then(accounts => {
     console.log(accounts);
-    signTry(accounts[0], req.body.funcName);
-  });
+    signTry(accounts[0], req.body.funcName, req.body.parameter);
+  });*/
   /*console.log(web3.eth.defaultAccount);
 
   var rawTx = {

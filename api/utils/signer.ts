@@ -4,7 +4,7 @@ import * as util from "ethereumjs-util";
 import * as tx from "ethereumjs-tx";
 // TODO: configure chainID properly
 
-export const signTry = (account, functionName) => {
+export const signTry = (account, functionName, param) => {
   /*let privateKey =
     "0xc0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0de";
   let privateKeyN =
@@ -35,7 +35,7 @@ export const signTry = (account, functionName) => {
   console.log(util.bufferToHex(param1Hex));*/
 
   const myContract = require("./contract.json");
-
+  console.log(param, functionName);
   var contract = new web3.eth.Contract(myContract, "0xcf603f76655ABA9E4Cf03bec5563969226faffA3");
   var funcTx = contract.methods['setName(string)']("anan").encodeABI();
 
