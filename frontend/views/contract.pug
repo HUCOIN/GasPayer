@@ -10,21 +10,15 @@ block content
                 button.btn.btn-success.ml-4#addContractButton Add Contract
         .row
             ul.list-group.list-group-horizontal
-                each contract in contracts
+                each contract,index in contracts
                     li.list-group-item 
                         .card(style='width: 18rem;')
                             .card-body
                                 h5.card-title #{contract.name}
                                 h6.card-subtitle.mb-3.text-muted #{contract.address}
-                                h6.card-subtitle.mb-2 #{contract.functionName}
-                                if contract.isFunctionPayable
-                                span.badge.badge-info.mr-5.mb-3 Payable
-                                h6.card-subtitle.mb-2  Payment Amount : #{contract.paymentAmount} HUC
-                                p.card-text
-                                    |Parameters : #{JSON.stringify(contract.parameters)}   
-                                if contract.isPaid
-                                    span.badge.badge-success.mr-5.mb-3 Paid
-                                else
-                                    span.badge.badge-danger.mr-5.mb-3 Not Paid
-                                    button.btn.btn-success.mb-3.mr-2#callFunction Pay
-                                button.card-btn.btn.btn-danger.mb-3 Cancel
+                                select(name='dropDown', id='funcDropdown'+index)
+                                    each func in contract.functions
+                                        option(value=func.body) #{func.body}
+                                button.card-btn.btn.btn-danger.mb-3(onclick='deleteButton("'+contract.name+'")') Delete
+                                button.btn.btn-success.mb-3.mr-2(onclick='payButton("'+contract.address+'","'+index+'")') Pay
+                                

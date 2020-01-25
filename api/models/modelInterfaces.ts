@@ -12,16 +12,12 @@ interface userInterface {
 
 interface contractInterface {
   name: string;
-  isPaid: boolean;
   address: string;
-  functionName: string;
-  parameters: any;
-  paymentAmount: number;
+  functions: [Object];
   userWallet: string;
   userMail: string;
-  isFunctionPayable: boolean;
-  returnValue: string;
 }
+
 
 export { userInterface };
 export { contractInterface };

@@ -19,5 +19,8 @@ router
 router
   .route("/callFunction")
   .post(contractController.callFunction)
+router
+  .route("/deleteContract")
+  .post(contractController.deleteContract)
 
 export { router as contractRoutes };

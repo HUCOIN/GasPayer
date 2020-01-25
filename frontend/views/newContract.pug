@@ -18,18 +18,5 @@ block content
                     .form-group
                         label(for='address') Address
                         input#address.form-control(type='text' placeholder='Contract Address')
-                    .form-group
-                        label(for='functionName') Function Name
-                        input#functionName.form-control(type='text' aria-describedby='emailHelp' placeholder='Function Name')
-                    .form-group
-                        label(for='parameters') Parameters
-                        input#parameters.form-control(type='text' placeholder='Function Parameters')
-                        small#parametersHelp.form-text.text-muted Function parameters in the json object form  ex. { "name":"something", "amount":5}
-                    .form-check
-                        input#payable.form-check-input(type='checkbox')
-                        label.form-check-label(for='payable') Function Is Payable
-                    .form-group.mt-2
-                        label(for='amount') Payment Amount
-                        input#amount.form-control(type='text' aria-describedby='emailHelp' placeholder='HUC Amount')
-                        small#emailHelp.form-text.text-muted Leave empty if the function is not payable
+                   
                     button.btn.btn-success(type='button')#addContract Add Contract

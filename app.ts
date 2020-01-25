@@ -113,7 +113,6 @@ app.set("view engine", "pug");
 
 // On unhandled Promise notify Bilge about this promise and error
 
-signer.signTry();
 
 exports.db = db;
 exports.app = app;

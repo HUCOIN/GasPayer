@@ -1,17 +1,13 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
+
 export const contractSchema = new Schema({
   name: String,
   address: String,
-  functionName: String,
-  parameters: Object,
-  paymentAmount: Number,
+  functions: [{body: String, payable: Boolean, inputs: {}}],
   userWallet: String,
   userMail: String,
-  isPaid: { type: Boolean, default: false },
-  isFunctionPayable: Boolean,
-  returnValue:String
 });
 
 export const userSchema = new Schema({
@@ -20,3 +16,5 @@ export const userSchema = new Schema({
   contracts: [contractSchema],
   balance: Number
 });
+
+
