@@ -4,7 +4,7 @@ import * as util from "ethereumjs-util";
 import * as tx from "ethereumjs-tx";
 // TODO: configure chainID properly
 
-export const signTry = (account) => {
+export const signTry = (account, functionName) => {
   /*let privateKey =
     "0xc0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0dec0de";
   let privateKeyN =

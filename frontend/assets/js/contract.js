@@ -19,13 +19,14 @@ function payButton(address,index) {
 
   console.log("here");
   console.log("address is ", address);
-  var val = $('#funcDropdown'+index).val();
+  var funcName = $('#funcDropdown'+index).val();
   
-  /*
+  
   $.post(
     "/contract/callFunction",
     {
       address: address,
+      funcName: funcName, 
     },
     function (data, status) {
       if (data.success) {
@@ -33,6 +34,6 @@ function payButton(address,index) {
       }
     }
   );
-  */
+  
 }
 

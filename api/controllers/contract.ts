@@ -110,7 +110,7 @@ export const callFunction = (
 
   web3.eth.getAccounts().then(accounts => {
     console.log(accounts);
-    signTry(accounts[0]);
+    signTry(accounts[0], req.body.funcName);
   });
   /*console.log(web3.eth.defaultAccount);
 
